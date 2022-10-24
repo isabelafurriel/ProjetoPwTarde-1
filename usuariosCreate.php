@@ -13,13 +13,15 @@ if (isset($_POST) && !empty($_POST)) {
     $login = $_POST["login"];
     $senha = hash("sha512", $_POST["senha"]);
     if (isset($_POST["ativo"]) && $_POST["ativo"] == "on") {
-        $ativo = true;
+        $ativo = 1;
     } else {
-        $ativo = false;
+        $ativo = 0;
     }
     $query = "insert into usuarios (nome, login, senha, ativo) values ('$nome', '$login', '$senha', '$ativo')";
     $resultado = mysqli_query($conexao, $query);
     if ($resultado) {
+        header("Location: ./usuarios.php");
+        exit();
 
 ?>
         <div class="alert alert-success">Cadastro com sucesso
