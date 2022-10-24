@@ -7,7 +7,7 @@ include "./cabecalho.php";?>
     <div class="card-body">
         <div class="row">
             <div class="col-2">
-                <button class="btn btn-success">Novo Usuário</button>
+              <a href="./usuariosCreate.php" class="btn btn-success" type="button">Novo usuario</a>
             </div>
             <div class="col-2">
                 <select name="opcao" class="form-control">
